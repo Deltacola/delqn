@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Delivery
+from .models import DeliveryData
 
-admin.site.register(Delivery)
+admin.site.register(DeliveryData)

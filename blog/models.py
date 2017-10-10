@@ -18,8 +18,11 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class Delivery(models.Model):
-    start_area = models.CharField(max_length=5)
-    end_area = models.CharField(max_length=5)
-    method = models.CharField(max_length=5)
+
+class DeliveryData(models.Model):
+    company_name = models.CharField(max_length=10)
+    weight = models.IntegerField(default=0)
+    total_length = models.IntegerField(default=0)
+    start_area = models.CharField(max_length=10)
+    end_area = models.CharField(max_length=10)
     price = models.IntegerField(default=0)

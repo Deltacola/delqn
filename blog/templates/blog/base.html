@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">
-  <title>Delivery Queen</title>
+  <title>{% block title %}Delivery Queen{% endblock %}</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#"><b>DeliveryQueen</b></a>
+      <a class="navbar-brand" href="/#"><b>DeliveryQueen</b></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
@@ -33,18 +33,20 @@
     <div class="container py-5 bg-dark">
       <div class="row">
         <div class="col-md-12">
-          <p class="lead text-white">지하철택배, 퀵 가격비교</p>
+          <p class="lead text-white"></p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 text-white bg-dark">
-          <form class="" method="post" action="result.html">{% csrf_token %}
-            <div class="form-group"> <label class="">출발지</label>
-              <input type="text" name="start_point" class="form-control" placeholder="출발지를 입력하세요."> </div>
-            <div class="form-group"> <label>도착지</label>
-              <input type="text" name="end_point" class="form-control" placeholder="도착지를 입력하세요."> </div>
-            <button type="submit" class="btn btn-primary">조회</button>
-          </form>
+            <form action="/search" method="get">
+              <input type="submit" value="Delivery Queen">
+            </form>
+            <br/>
+            {% block content %}
+            {% endblock %}
+
+            {% block footer %}
+            {% endblock %}
         </div>
       </div>
     </div>
