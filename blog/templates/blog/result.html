@@ -3,10 +3,10 @@
 {% block content %}
     <div id="content">
 
-        <h1>딜리버리퀸</h1>
+        <br/>
 
         <form action="." method="post"> {% csrf_token %}
-            {{ form.as_table }}
+            {{ form.as_p }}
             <input type="submit" value="검색" />
         </form>
 
@@ -18,6 +18,7 @@
             <p>가격 : {{ deli.price }},000원</p>
             <p>무게 : {{ deli.weight }}kg</p>
             <p>총길이 : {{ deli.total_length }}cm</p>
+            <br/>
         {% endfor %}
 
         {% elif search_term %}
