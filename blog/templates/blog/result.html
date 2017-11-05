@@ -1,30 +1,49 @@
-{% extends "blog/base.html" %}
+<!DOCTYPE html>
+<html>
 
-{% block content %}
-    <div id="content">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.css">
+  <style>
+    table {
+      table-layout: fixed;
+    }
 
-        <br/>
+    table th,
+    table td {
+      overflow: hidden;
+    }
+  </style>
+</head>
 
-        <form action="." method="post"> {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="검색" />
-        </form>
+<body>{% extends "blog/base.html" %} {% block content %}
+  <div id="content">
+    <br>
+    <form action="." method="post"> {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="검색"> </form>
+    <br>
+    <br> {% if object_list %} {% for deli in object_list %}
+    <table class="table table-inverse table-bordered table-condensed span-12">
+      <tbody>
+        <tr>
+          <td style="width: 20%">
+            <a href="{{ deli.get_absolute_url }}">{{ deli.company_name }}</a>
+          </td>
+          <td style="width: 20%">{{ deli.weight }}kg</td>
+          <td style="width: 20%">{{ deli.total_length }}cm</td>
+          <td style="width: 20%">최대 {{ deli.del_time }}시간</td>
+          <td style="width: 20%">{{ deli.price }},000원</td>
+        </tr>
+      </tbody>
+    </table>
+    <br> {% endfor %} {% elif search_term %} <b><i>Search Word({{ search_term }}) Not Found !!</i></b> {% endif %} </div> {% endblock %}
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
 
-    <br/><br/>
-
-    {% if object_list %}
-        {% for deli in object_list %}
-            <h2><a href="{{ deli.get_absolute_url }}">{{ deli.company_name }}</a></h2>
-            <p>가격 : {{ deli.price }},000원</p>
-            <p>무게 : {{ deli.weight }}kg</p>
-            <p>총길이 : {{ deli.total_length }}cm</p>
-            <p>최대 도착시간 : {{ deli.del_time }}시간</p>
-            <br/>
-        {% endfor %}
-
-        {% elif search_term %}
-            <b><i>Search Word({{ search_term }}) Not Found !!</i></b>
-    {% endif %}
-
-    </div>
-{% endblock %}
+</html>

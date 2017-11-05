@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -10,20 +10,6 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md bg-primary navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/#"><b>Delivery Queen</b></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-bookmark-o"></i> Bookmarks</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
   <div class="py-5 opaque-overlay text-left h-100 w-100" style="background-image: url(&quot;https://windowsforum.kr/files/attach/images/70143/702/470/Black_by_LOmbre.jpg&quot;);">
     <div class="container">
       <div class="row">
@@ -33,21 +19,13 @@
     <div class="container py-5 bg-dark">
       <div class="row">
         <div class="col-md-12">
-          <p class="lead text-white"></p>
+          <a class="btn btn-warning btn-lg btn-block" href="/search"><b>Delivery Queen</b></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 text-white bg-dark">
-            <form action="/search" method="get">
-              <input type="submit" value="Delivery Queen">
-            </form>
-            <br/>
-            {% block content %}
-            {% endblock %}
-
-            {% block footer %}
-            {% endblock %}
-        </div>
+          <br>
+          <br> {% block content %} {% endblock %} {% block footer %} {% endblock %} </div>
       </div>
     </div>
   </div>
