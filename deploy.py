@@ -42,7 +42,7 @@ class AskDjango(object):
             self.python_path = os.path.join(os.environ['SYSTEMDRIVE'] + os.path.sep, 'python27', 'python.exe')
         else:
             self.python_env_module = 'venv'
-            self.python_path = os.path.join(os.environ['SYSTEMDRIVE'] + os.path.sep, 'python34', 'python.exe')
+            self.python_path = os.path.join(os.environ['SYSTEMDRIVE'] + os.path.sep, 'python36', 'python.exe')
 
         self.is_skip_python_deployment = deploy_settings.IS_SKIP_PYTHON_DEPLOYMENT
         self.is_skip_django_extra = deploy_settings.IS_SKIP_DJANGO_EXTRA
