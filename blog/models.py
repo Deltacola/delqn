@@ -9,3 +9,4 @@ class DeliveryData(models.Model):
     start_area = models.CharField(max_length=10)
     end_area = models.CharField(max_length=10)
     price = models.IntegerField(default=0)
+    tel_num = models.CharField(max_length=16, blank=True)
