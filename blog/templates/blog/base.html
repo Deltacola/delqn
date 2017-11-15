@@ -10,20 +10,19 @@
 </head>
 
 <body>
-  <div class="py-5 opaque-overlay text-left h-100 w-100" style="background-image: url(&quot;https://windowsforum.kr/files/attach/images/70143/702/470/Black_by_LOmbre.jpg&quot;);">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12"></div>
-      </div>
-    </div>
-    <div class="container py-5 bg-dark">
+  <div class="py-5 text-left h-100 w-100" style="background-image: url(&quot;https://goo.gl/images/Y76Awn&quot;);">
+    <div class="container py-1">
       <div class="row">
         <div class="col-md-12">
-          <a class="btn btn-warning btn-lg btn-block" href="/search"><b>Delivery Queen</b></a>
+          <a href="/search">{% load static %}
+            <center>
+              <img src="{% static 'images/dqbg.png' %}" alt="Delivery Queen">
+            </center>
+          </a>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 text-white bg-dark">
+        <div class="col-md-12 text-black text-center">
           <br>
           <br> {% block content %} {% endblock %} {% block footer %} {% endblock %} </div>
       </div>
