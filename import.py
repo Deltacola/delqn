@@ -12,7 +12,7 @@ django.setup()
 
 from blog.models import DeliveryData
 
-data = csv.reader(open("C:/Users/Deltacola/Documents/deqn/delqn/info.csv"), delimiter=',')
+data = csv.reader(open("C:/Users/Deltacola/Documents/deqn/delqn/info2.csv"), delimiter=',')
 
 for row in data:
     if row[0] != 'company_name':
