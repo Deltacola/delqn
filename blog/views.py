@@ -23,7 +23,7 @@ class SearchFormView(FormView):
         schLength = '%s' % self.request.POST['length_form']
         schWeight = '%s' % self.request.POST['weight_form']
         schTime = '%s' % self.request.POST['time_form']
-        area_list = DeliveryData.objects.filter(Q(start_area=schStart) & Q(end_area=schEnd) & Q(total_length__gte=schLength) & Q(del_time__lte=schTime) & Q(weight__gte=schWeight)).distinct()
+        area_list = DeliveryData.objects.filter(Q(start_area=schStart) & Q(end_area=schEnd) & Q(total_length__gte=schLength) & Q(del_time__lte=schTime) & Q(weight__gte=schWeight)).order_by('price')
         context = {}
         context['form'] = form
         context['search_term'] = schStart
