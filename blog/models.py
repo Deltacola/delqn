@@ -10,3 +10,8 @@ class DeliveryData(models.Model):
     end_area = models.CharField(max_length=10)
     price = models.IntegerField(default=0)
     tel_num = models.CharField(max_length=16, blank=True)
+
+class RecommendData(models.Model):
+    start_x = models.CharField(max_length=10)
+    end_x = models.CharField(max_length=10)
+    recommend_x = models.ImageField(blank=True, null=True)

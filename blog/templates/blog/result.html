@@ -25,12 +25,14 @@
     <form action="." method="post"> {% csrf_token %} {{ form.as_p }}
       <input type="submit" value="검색" class="btn btn-warning text-dark"> </form>
     <br>
-    <br> {% if object_list %} {% load static %}
-    <a href="{% static 'images/dqueenbg.png' %}">
+    <br> {% if object_list %} {% if recommend_list %} {% for rec in recommend_list %} {% load static %}
+    <a href="{{ rec.recommend_x.url }}">
       <center>
-        <img src="{% static 'images/dqbg.png' %}" alt="Recommend">
+        <img src="{% static 'images/dqsmbg.png' %}" alt="Recommend">
       </center>
     </a>
+    {% endfor %}
+    {% endif %}
     <br/>
     {% for deli in object_list %}
     <div class="progress">
