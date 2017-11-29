@@ -28,11 +28,12 @@
     <br> {% if object_list %} {% if recommend_list %} {% for rec in recommend_list %} {% load static %}
     <a href="{{ rec.recommend_x.url }}">
       <center>
-        <img src="{% static 'images/dqsmbg.png' %}" alt="Recommend">
+        <img src="{% static 'images/dqqdqbg.png' %}" alt="Recommend">
       </center>
     </a>
     {% endfor %}
     {% endif %}
+    <br/>
     <br/>
     {% for deli in object_list %}
     <div class="progress">
